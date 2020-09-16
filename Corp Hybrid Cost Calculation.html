@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Rockets Elevator Quotation Form </title>
+        <link rel="stylesheet" href="">
+ 
+    </head>
+
+    <body>
+
+        <h1> Corporate and Hydrid building </h1>
+
+     <form> 
+
+          Story: <input type="number" id="story" /><br>
+
+          Tenant : <input type="number" id="tenant" /><br>
+
+          Floor: <input type="number" id="floor" /><br> 
+
+          Basement: <input type="number" id="base"/><br>
+
+          Parking: <input type="number" id="park"/><br>
+
+          OccupFloorMax: <input type="number" id="occup"/><br>
+
+          ActivHourDay :<input type="number" id="Hour" /><br>
+          
+
+          Total Elev <input type="button" onClick="CalculElevTotal()" />
+
+           Reset <input type="button"    OnClick= "resetvalue"/>  
+        </form>
+
+
+        <p>The Result : <br>
+         <span id = "result"></span>
+        </p>
+
+    
+    
+
+    
+
+
+        
+    
+
+        <SCript>
+                var  X; var Tenant; var Y;  var Z; var Parking;  var ActivHourDay; var ColumnReq; var K; var ElevReq; var A; var B; var L;
+               
+            function CalculateElevReq(){
+
+                       X  = document.getElementById("occup").value; 
+
+                       Y = document.getElementById("floor").value; 
+
+                       Z  = document.getElementById("basement").value; 
+
+                       K = document.getElementById("base").value;
+
+                       P = document.getElementById("story").value;  
+
+                            
+                ColumnReq = (Z + P)/20;
+
+                ElevReq = X*( Y + Z)/1000;
+
+                        function MathCeil(){ 
+
+                            Math.Ceil(ColumnReq)= A; 
+
+                            return A; 
+                        };
+
+                        function MathCeil(){ 
+
+                            Math.Ceil(ElevReq)= B; 
+
+                                        return B; 
+                        };
+    
+                        L = B/A;
+
+                        function MathCeil(){ Math.Ceil(L)= V; 
+
+                                            return V;
+                        }
+
+                        document.getElementById("result").innerHTML = V*B 
+
+                    
+
+
+                        }
+
+
+
+                
+        </script>
+
+
+    </body>
+    
+</html>  
+        
