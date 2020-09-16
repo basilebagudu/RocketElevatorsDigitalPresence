@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Rockets Elevator Quotation Form </title>
+    <link rel="stylesheet" href="">
+ 
+</head>
+
+<body>
+
+
+        <form action=""  methode="POST"  id="formulaire" onload="CalculElevator(); return false" text aria-setsize="15">    
+            
+            
+            
+            <div style="color:blue;"  font-size= 5PX class="centrage"   centrage {text-align:center;}></div><h2> ROCKERS ELEVATORS QUOTATION FORM </h2> </div>
+
+
+    
+               
+                 <P> Number of Stories <input type="Number" value=""  id=" Story"   name="Story" size="10" style="color: #020e0e;" font-size= 10PX> <span>
+
+                
+                
+
+                Number of Basements <input type="Number" value=""  id="Basements"   name="Basements" size="10"></P></span>
+
+           
+           
+           
+
+                 <P> Number of Appartments <input type= "Number" value=""  id="Appartments"   name="Appartments" size="10"><span>
+
+                 
+
+                 Number of Floors <input type="Number" value=""  id="Floors"   name="Floors" height="20" size="10"> </P></span>
+
+            </div>
+
+                
+        
+                
+            <div> 
+                
+                
+                <p>Calculate <input type="Submit"  value="press"  id="Calculate"   name="B1" Onsubmit="valider(); return false" size="20"> <span>
+
+
+                  Reset <input type="Reset"  value="refresh"  id="Reset"   name="B2" Onclick=() size="20"><span> 
+
+
+                 Number of Elevators<input type="number"     id="Result"     name="Elevators" ></span></p>
+
+            
+            </div>
+            
+            
+        </form>
+
+    
+
+        <SCript>
+
+               
+               var Appartments; var Basements; var Story; var Column; var X; var Y; var Elevator; var K; var Z;
+               
+                function CalculElevator()
+                
+
+                {
+                    var X = (document.getElementById("formulaire").elements["Appartements"].value)/6*(document.getElementById("formulaire").elements["story"].value-document.getElementById("formulaire").elements["Basement"].value);
+
+                      console.log(patate)
+                          
+                    var Elevator = Math.Ceil(X);
+                            
+
+                    var Z = (document.getElementById("formulaire").elements["Story"].value)/20;
+
+                            
+                    var Column = Math.ceil(Z);
+
+ 
+                    var Result = Column*Elevator;
+
+
+                        return Result;      
+  
+                }
+
+
+                document.getElementById(Result).value = Result;
+
+        </SCript>
+
+
+</body>
+</html>
+

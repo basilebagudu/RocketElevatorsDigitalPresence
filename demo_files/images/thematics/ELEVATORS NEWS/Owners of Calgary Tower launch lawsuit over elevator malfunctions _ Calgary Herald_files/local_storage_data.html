@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://flipp.com/local_storage_data.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="robots" content="noindex">
+    <title>getLocalStorageDAta</title>
+  </head>
+  <body>
+    <script>
+      try {
+        var distAnalytics = JSON.parse(window.localStorage.getItem('dist_analytics'));
+        var sentAnalytics = JSON.parse(window.localStorage.getItem('sent_analytics'));
+
+        var distAnalyticsEv = distAnalytics && distAnalytics.ev ? distAnalytics.ev : {};
+        var sentAnalyticsEv = sentAnalytics && sentAnalytics.ev ? sentAnalytics.ev : {};
+        var objs = [distAnalyticsEv, sentAnalyticsEv];
+
+        // object.assign for ie
+        var resObj = objs.reduce(function (acc, cur) {
+          Object.keys(cur).forEach(function (item) {
+            acc[item] = cur[item];
+          });
+          return acc;
+        }, {});
+
+        parent.postMessage({localStorage: resObj, id: 'localStorage'}, '*');
+      } catch (e) {
+        parent.postMessage({localStorage: {}, id: 'localStorage'}, '*');
+      }
+    </script>
+  
+
+</body></html>

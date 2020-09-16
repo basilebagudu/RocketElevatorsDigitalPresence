@@ -1,0 +1,61 @@
+
+<!-- saved from url=(0042)https://a.wishabi.com/sync/wid_iframe.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>wid</title>
+    <script>
+// Copyright 2005 The Closure Library Authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS-IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+var getCookie = function(name) {
+  var nameEq = name + '=';
+  var cookie = document.cookie;
+  var parts = (cookie || '').split(/\s*;\s*/);
+  for (var i = 0, part; part = parts[i]; i++) {
+    if (part.lastIndexOf(nameEq, 0) == 0) {
+      return part.substr(nameEq.length);
+    }
+    if (part == name) {
+      return '';
+    }
+  }
+  return null;
+}   
+    </script>
+
+    <script>
+var handleMessage = function(e) {
+  respondWid(e);
+}
+
+var respondWid = function(e) {
+  if (e.data == 'wishabi_a_request') {
+    var wid = getCookie('gid');
+    if (wid) {
+      e.source.postMessage('wishabi_a_respond_wid:' + wid,
+                           e.origin);
+    }
+  }
+}
+
+if(window.addEventListener) {
+  window.addEventListener('message', handleMessage, false);
+} else {
+  window.attachEvent('onmessage', handleMessage);
+}
+
+window.parent.postMessage('wishabi_a_ready_wid', '*');
+    </script>
+  </head>
+  <body>
+
+</body></html>
